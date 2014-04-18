@@ -1,0 +1,26 @@
+* Bootstrap Server
+** When a new machine wants to act as a Ordinary/Compile Node (CN), it will
+   contact the bootstrap server.
+** The bootstrap server has information about all the other nodes in the
+   system.
+** The bootstrap server will respond with this information and the new node can
+   start sending heartbeat messages to the other nodes in the system.
+** The bootstrap server will also be the one responsible for re-assigning work,
+   in case one of the CN fails. When it doesn't see a heartbeat message from a
+   CN for a specified of time, it will assign that job to someone else.
+** Once all the compile jobs are done (the BS knows it because it is monitoring
+   the heartbeats), the BS will assign the linking job to some idle CN.
+
+* Linking Node
+** This node is just the one used for linking. It is just another CN, chosen
+   to do the linking.
+
+* Ordinary/Compile Node
+** These are the worker nodes. They will just listen on a particular socket for
+   some sort of work to arrive. Once it's there, they just start executing the
+   job.
+** They notify what job they have accepted to the other nodes. (They can just
+   piggyback this info on the heartbeat messages).
+** Once they have finished a particular job, they can notify the others of this
+   completion, again via an explicit message or piggybacking on the heartbeat
+   message.

@@ -1,0 +1,22 @@
+* Processes (May be we need just one)
+** Bootstrap server process.
+*** Will need to be able to communicate with the redundant BS process as well
+    as the Django front-end.
+** Compile node process.
+*** Will need to be able to communicate all other CNs and the active BS.
+*** Will fork off the compiler process (gcc) locally and store the resulting .o
+    file locally.
+
+
+* What we need to look at
+** How to open and listen on sockets in Erlang?
+** How to open, read, and write files in Erlang?
+** How to fork and wait on new processes in Erlang?
+** How to connect to a database instance from Erlang?
+** How to communicate between Django and Erlang processes? JSON or Thrift?
+** Are we going to need a config file?
+*** Yes, maybe.
+** Come up with the abstractions that we need to build.
+*** NetworkManager
+*** JobManager
+*** WebAppManager

@@ -1,0 +1,49 @@
+Aditya - AJ
+Akshay - AG
+Tao - TY
+Wendi - WZ
+
+* Video proposal -- Done
+** AJ, AG, TY, WZ
+
+* Research on forking and waiting on Erlang processes and basic message passing.
+** AJ
+
+* Research on Django <--> Erlang communication
+** TY
+
+* Research on DB connections and file I/O in Erlang
+** AG
+
+* Research on sockets in Erlang
+** WZ
+
+* Next Steps --
+** Let's say that the BS node goes down after assigning a compile project
+   but before the compilation is done. How do the CNs start communication with
+   the cold BSN?
+   
+** Research on how distcc transfers .o files back to the initiator node.
+
+** More research on Links and Monitors in Erlang and how they can be used to
+    achieve Fault-tolerance (with respect to heartbeat messages?)
+
+** Should we use Erlang ports of raw sockets for communication?
+
+** Test a simple Mnesia application
+
+** Test a simple application using ErlPort to call Erlang from Python
+
+** Test a simple single node Erlang application that calls distcc and check behavior.
+
+** Think in a general manner about what could go wrong and how we should handle it
+
+* Far Future:
+** Integrating DB connectivity, sockets, and message passing to create Bootstrap servers.
+** Integrating forking/waiting, sockets, and message passing to create CN.
+
+** Creating the webapp.
+** Making sure that the system is fault-tolerant. Replication of BS state and restarting jobs.
+
+** Integrating Django <--> Erlang communication in webapp and Bootstrap servers.
+
