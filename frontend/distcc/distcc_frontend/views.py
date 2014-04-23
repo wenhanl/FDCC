@@ -26,7 +26,7 @@ def home_page(request):
     is_authenticated = False
     if request.user.is_authenticated():
         is_authenticated = True
-    context = {"is_authenticated":is_authenticated}
+    context = {"is_authenticated":is_authenticated, "user":request.user}
 
     if request.method == 'GET':
         return render(request, 'index.html', context)
@@ -42,7 +42,7 @@ def login(request):
             if _login(request,form.cleaned_data["username"],form.cleaned_data["password"]):
                 return HttpResponseRedirect(reverse("index"))
             return HttpResponseRedirect(reverse("login"))
-    template_var["form"]=form        
+    template_var["form"]=form       
     return render_to_response("signin.html",template_var,context_instance=RequestContext(request))
     
 def _login(request,username,password):

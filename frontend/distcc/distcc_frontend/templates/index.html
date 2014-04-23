@@ -17,6 +17,7 @@
 
     <!-- Custom styles for this template -->
     <link href="{% static "css/cover.css"%}" rel="stylesheet">
+    <link href="{% static "css/my.css"%}" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy this line! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -38,7 +39,10 @@
 
           <div class="masthead clearfix">
             <div class="inner">
-              <h3 class="masthead-brand">FDCC</h3>
+              <h3 class="masthead-brand">FDCC </h3>
+              {% if is_authenticated %}
+              <p class="masthead-brand" id="username">Welcome, {{user}} </p>
+              {% endif %}
               <ul class="nav masthead-nav">
                 <li class="active"><a href="#">Home</a></li>
                 
