@@ -41,9 +41,14 @@
               <h3 class="masthead-brand">FDCC</h3>
               <ul class="nav masthead-nav">
                 <li class="active"><a href="#">Home</a></li>
-                <li><a href="{% url 'signin' %}">Sign Up</a></li>
+                
+                {% if is_authenticated %}
                 <li><a href="{% url 'upload' %}">Upload</a></li>
                 <li><a href="{% url 'progress' %}">Progress</a></li>
+                <li><a href="{% url 'logout' %}"> Log out</a></li>
+                {% else %}
+                <li><a href="{% url 'login' %}">Log in</a></li>
+                {% endif %}
               </ul>
             </div>
           </div>

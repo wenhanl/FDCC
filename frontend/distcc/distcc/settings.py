@@ -60,8 +60,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'erlang',
+        #'NAME': 'test',
         'USER': 'root',
-        'PASSWORD': '82267185',
+        #'PASSWORD': '82267185',
+		'PASSWORD': '',
         'HOST': 'localhost',
         'PORT': '3306',
     }
